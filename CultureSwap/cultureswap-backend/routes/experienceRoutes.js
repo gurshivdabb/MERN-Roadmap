@@ -1,12 +1,12 @@
 import express from 'express';
-import Experience from '../controllers/experienceController.js';
+import { getExperiences, getExperience, createExperience, updateExperience, deleteExperience } from '../controllers/experienceController.js';
 
 const experienceRouter = express.Router();
 
-experienceRouter.get('/', Experience.getExperiences);
-experienceRouter.get('/:id', Experience.getExperience);
-experienceRouter.post('/', Experience.createExperience);
-experienceRouter.put('/:id', Experience.updateExperience);
-experienceRouter.delete('/:id', Experience.deleteExperience);
+experienceRouter.get('/', getExperiences);
+experienceRouter.get('/:id', getExperience);
+experienceRouter.post('/', createExperience);
+experienceRouter.put('/:id', updateExperience);
+experienceRouter.delete('/:id', deleteExperience);
 
 export default experienceRouter;

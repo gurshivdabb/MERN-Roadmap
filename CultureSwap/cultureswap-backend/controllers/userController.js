@@ -1,7 +1,7 @@
 import User from '../models/User.js';
 
 // GET all users
-exports.getUser = async (req, res) => {
+export const getUsers = async (req, res) => {
     try {
         const users = await User.find();
         res.json(users);
@@ -11,7 +11,7 @@ exports.getUser = async (req, res) => {
 };
 
 // GET users by ID
-exports.getUser = async (req, res) => {
+export const getUser = async (req, res) => {
     try {
         const user = await User.findById(req.params.id);
 
@@ -25,7 +25,7 @@ exports.getUser = async (req, res) => {
 };
 
 // POST create users
-exports.createUser = async (req, res) => {
+export const createUser = async (req, res) => {
     try {
         const user = await User.create(req.body);
         res.status(201).json({ user });
@@ -35,7 +35,7 @@ exports.createUser = async (req, res) => {
 };
 
 // PUT update user
-exports.updateUser = async (req, res) => {
+export const updateUser = async (req, res) => {
     try {
         const updatedUser = await User.findByIdAndUpdate(
             req.params.id,
@@ -53,7 +53,7 @@ exports.updateUser = async (req, res) => {
 };
 
 // DELETE user
-exports.deleteUser = async (req, res) => {
+export const deleteUser = async (req, res) => {
     try {
         const deletedUser = await User.findByIdAndDelete(req.params.id);
 

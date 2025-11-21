@@ -1,7 +1,7 @@
-import Experience from "../models/Experience";
+import Experience from "../models/Experience.js";
 
 // GET all experiences
-exports.getExperiences = async (req, res) => {
+export const getExperiences = async (req, res) => {
     try {
         const exps = await Experience.find().populate('userID');
         res.json(exps);
@@ -11,7 +11,7 @@ exports.getExperiences = async (req, res) => {
 };
 
 // GET experience by ID
-exports.getExperience = async (req, res) => {
+export const getExperience = async (req, res) => {
     try {
         const exp = await Experience.findById(req.params.id).populate('userID');
 
@@ -25,7 +25,7 @@ exports.getExperience = async (req, res) => {
 };
 
 // POST new experience
-exports.createExperience = async (req, res) => {
+export const createExperience = async (req, res) => {
     try {
         const exp = await Experience.create(req.body);
         res.status(201).json(exp);
@@ -35,7 +35,7 @@ exports.createExperience = async (req, res) => {
 };
 
 // Update experience
-exports.updateExperience = async (req, res) => {
+export const updateExperience = async (req, res) => {
     try {
         const updatedExp = await Experience.findByIdAndUpdate(
             req.params.id,
@@ -53,7 +53,7 @@ exports.updateExperience = async (req, res) => {
 };
 
 // DELETE experience
-exports.deleteExperience = async (req, res) => {
+export const deleteExperience = async (req, res) => {
     try {
         const deletedExp = await Experience.findByIdAndDelete(req.params.id);
 
