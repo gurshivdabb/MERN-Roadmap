@@ -1,15 +1,12 @@
 import express from 'express';
-import Experience from '../models/Experience.js'
-import experienceRouter from express.Router();
+import Experience from '../controllers/experienceController.js';
 
-Experience.post('/', async (req, res) => {
-    try {
-        const experience = new Experience(req.body);
-        const savedExperience = await experience.save();
-        res.json(savedExperience);
-    } catch (err) {
-        req.status(400).json({ error: err.message }); 
-    }
-});
+const experienceRouter = express.Router();
+
+experienceRouter.get('/', Experience.getExperiences);
+experienceRouter.get('/:id', Experience.getExperience);
+experienceRouter.post('/', Experience.createExperience);
+experienceRouter.put('/:id', Experience.updateExperience);
+experienceRouter.delete('/:id', Experience.deleteExperience);
 
 export default experienceRouter;
