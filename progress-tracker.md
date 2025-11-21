@@ -20,7 +20,7 @@
 - [x] Tue – Learn MongoDB CRUD operations
 - [x] Wed – Create User schema
 - [x] Thu – Create Experience schema
-- [ ] Fri – Implement basic CRUD routes
+- [x] Fri – Implement basic CRUD routes
 - [ ] Sat – Test routes with Postman
 - [ ] Sun – Commit all changes to GitHub
 
