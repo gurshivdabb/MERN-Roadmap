@@ -16,7 +16,7 @@ export const getExperience = async (req, res) => {
         const exp = await Experience.findById(req.params.id).populate('userID');
 
         if (!exp)
-            res.status(404).json({ message: 'Not Found' });
+            return res.status(404).json({ message: 'Not Found' });
 
         res.json(exp);
     } catch (err) {
@@ -28,7 +28,10 @@ export const getExperience = async (req, res) => {
 export const createExperience = async (req, res) => {
     try {
         const exp = await Experience.create(req.body);
-        res.status(201).json(exp);
+        res.status(201).json({
+            message: 'Experience created',
+            experience: exp
+        });
     } catch (err) {
         res.status(400).json({ message: err.message });
     }
@@ -40,7 +43,7 @@ export const updateExperience = async (req, res) => {
         const updatedExp = await Experience.findByIdAndUpdate(
             req.params.id,
             req.body,
-            { new: true }
+            { new: true, runValidators: true }
         );
 
         if (!updatedExp)
