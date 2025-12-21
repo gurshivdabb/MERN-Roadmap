@@ -21,8 +21,8 @@
 - [x] Wed – Create User schema
 - [x] Thu – Create Experience schema
 - [x] Fri – Implement basic CRUD routes
-- [ ] Sat – Test routes with Postman
-- [ ] Sun – Commit all changes to GitHub
+- [x] Sat – Test routes with Postman
+- [x] Sun – Commit all changes to GitHub
 
 ### Week 3 – Authentication
 - [ ] Mon – Learn JWT basics
