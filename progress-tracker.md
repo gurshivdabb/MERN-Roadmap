@@ -25,10 +25,10 @@
 - [x] Sun – Commit all changes to GitHub
 
 ### Week 3 – Authentication
-- [ ] Mon – Learn JWT basics
-- [ ] Tue – Learn bcrypt for password hashing
-- [ ] Wed – Implement signup route
-- [ ] Thu – Implement login route
+- [x] Mon – Learn JWT basics
+- [x] Tue – Learn bcrypt for password hashing
+- [x] Wed – Implement signup route
+- [x] Thu – Implement login route
 - [ ] Fri – Protect routes with JWT middleware
 - [ ] Sat – Test authentication flow
 - [ ] Sun – Commit all changes to GitHub
