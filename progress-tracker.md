@@ -29,9 +29,9 @@
 - [x] Tue – Learn bcrypt for password hashing
 - [x] Wed – Implement signup route
 - [x] Thu – Implement login route
-- [ ] Fri – Protect routes with JWT middleware
-- [ ] Sat – Test authentication flow
-- [ ] Sun – Commit all changes to GitHub
+- [x] Fri – Protect routes with JWT middleware
+- [x] Sat – Test authentication flow
+- [x] Sun – Commit all changes to GitHub
 
 ### Week 4 – Testing & Cleanup
 - [ ] Mon – Test all CRUD routes with Postman
