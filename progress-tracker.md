@@ -34,7 +34,7 @@
 - [x] Sun – Commit all changes to GitHub
 
 ### Week 4 – Testing & Cleanup
-- [ ] Mon – Test all CRUD routes with Postman
+- [x] Mon – Test all CRUD routes with Postman
 - [ ] Tue – Fix any bugs or errors
 - [ ] Wed – Refactor code for readability
 - [ ] Thu – Add environment variables
