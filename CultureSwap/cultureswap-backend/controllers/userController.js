@@ -1,10 +1,12 @@
 import User from '../models/User.js';
 import bcrypt from 'bcrypt';
+import jwt from 'jsonwebtoken';
+import { generateAccessToken } from '../middleware/auth.js';
 
 // GET all users
 export const getUsers = async (req, res) => {
     try {
-        const users = await User.find();
+        const users = await User.find().select('-password'); // exclude passwords
         res.json(users);
     } catch (err) {
         res.status(500).json({ message: err.message });
@@ -14,7 +16,7 @@ export const getUsers = async (req, res) => {
 // GET users by ID -- access profile
 export const getUser = async (req, res) => {
     try {
-        const user = await User.findById(req.params.id);
+        const user = await User.findById(req.params.id).select('-password'); // exclude password
 
         if (!user)
             return res.status(404).json({ message: 'Not Found' });
@@ -77,7 +79,7 @@ export const loginUser = async (req, res) => {
         }
 
         // Find user by email
-        const user = await User.findOne({ email });
+        const user = await User.findOne({ email }).select('+password'); // include password for comparison
         if (!user) {
             return res.status(400).json({ message: 'Invalid email' });
         }
@@ -88,12 +90,17 @@ export const loginUser = async (req, res) => {
             return res.status(400).json({ message: 'Invalid password' });
         }
 
+        // Generate JWT
+        const accessToken = generateAccessToken(user);
+
+        // Successful login
         res.json({
-            message: 'Login successful', user: {
+            message: 'Login successful',
+            accessToken: accessToken,
+            user: {
                 _id: user._id,
                 name: user.name,
-                email: user.email,
-                createdAt: user.createdAt
+                email: user.email
             }
         });
     } catch (err) {
@@ -112,7 +119,7 @@ export const updateUser = async (req, res) => {
             { new: true, runValidators: true }
         ).select('-password'); // exclude password from returned document
 
-        if(!updatedUser) {
+        if (!updatedUser) {
             return res.status(404).json({ message: 'Not Found' });
         }
 
@@ -128,7 +135,7 @@ export const deleteUser = async (req, res) => {
         const deletedUser = await User.findByIdAndDelete(req.params.id);
 
         if (!deletedUser)
-            res.status(404).json({ message: 'Not Found' });
+            return res.status(404).json({ message: 'Not Found' });
 
         res.json({ message: 'User Deleted Successfully' });
     } catch (err) {

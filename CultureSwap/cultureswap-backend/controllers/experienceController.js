@@ -27,7 +27,7 @@ export const getExperience = async (req, res) => {
 // POST new experience
 export const createExperience = async (req, res) => {
     try {
-        const exp = await Experience.create(req.body);
+        const exp = await Experience.create({ ...req.body, userID: req.user._id });
         res.status(201).json({
             message: 'Experience created',
             experience: exp
@@ -40,6 +40,15 @@ export const createExperience = async (req, res) => {
 // Update experience
 export const updateExperience = async (req, res) => {
     try {
+        // Check existence
+        const exp = await Experience.findById(req.params.id);
+        if (!exp)
+            return res.status(404).json ({ message: 'Experience Not Found' });
+
+        // Check ownership
+        if (exp.userID.toString() !== req.user._id)
+            return res.status(403).json({ message: 'Forbidden: Not your experience' });
+
         const updatedExp = await Experience.findByIdAndUpdate(
             req.params.id,
             req.body,
@@ -58,6 +67,15 @@ export const updateExperience = async (req, res) => {
 // DELETE experience
 export const deleteExperience = async (req, res) => {
     try {
+        // Check existence
+        const exp = await Experience.findById(req.params.id);
+        if (!exp)
+            return res.status(404).json ({ message: 'Experience Not Found' });
+
+        // Check ownership
+        if (exp.userID.toString() !== req.user._id)
+            return res.status(403).json({ message: 'Forbidden: Not your experience' });
+        
         const deletedExp = await Experience.findByIdAndDelete(req.params.id);
 
         if (!deletedExp)
