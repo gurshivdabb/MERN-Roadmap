@@ -1,3 +1,8 @@
+/**
+ * Author: Gurshiv Singh Dabb
+ * Main server file for CultureSwap backend
+ */
+
 import express from 'express';
 import connectDB from './db/connect.js';
 import dotenv from 'dotenv';
