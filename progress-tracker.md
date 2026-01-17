@@ -35,11 +35,11 @@
 
 ### Week 4 – Testing & Cleanup
 - [x] Mon – Test all CRUD routes with Postman
-- [ ] Tue – Fix any bugs or errors
+- [x] Tue – Fix any bugs or errors
 - [ ] Wed – Refactor code for readability
-- [ ] Thu – Add environment variables
-- [ ] Fri – Review project folder structure
-- [ ] Sat – Write basic README for backend
+- [x] Thu – Add environment variables
+- [x] Fri – Review project folder structure
+- [x] Sat – Write basic README for backend
 - [ ] Sun – Commit all changes to GitHub
 
 ---
