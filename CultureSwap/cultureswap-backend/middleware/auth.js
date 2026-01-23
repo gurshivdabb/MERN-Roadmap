@@ -1,10 +1,15 @@
+/**
+ * auth.js
+ * Authentication middleware and token generation
+ * 
+ * Author: Gurshiv Singh Dabb
+ */
+
 import jwt from 'jsonwebtoken';
 
-/**
- * Middleware to protect routes
- * - reads Authorization header
- * - verifies JWT
- */
+// Middleware to protect routes
+// - reads Authorization header
+// - verifies JWT
 export function authMiddleware(req, res, next) {
     // Read Authorization Header
     // Format: "Bearer <token>"

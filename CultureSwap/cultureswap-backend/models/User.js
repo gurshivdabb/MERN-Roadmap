@@ -1,3 +1,10 @@
+/**
+ * User.js
+ * Mongoose model for User entity
+ * 
+ * Author: Gurshiv Singh Dabb
+ */
+
 import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({

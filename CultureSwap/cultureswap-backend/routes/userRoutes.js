@@ -1,3 +1,10 @@
+/**
+ * userRoutes.js
+ * Routes for User entity
+ * 
+ * Author: Gurshiv Singh Dabb
+ */
+
 import express from 'express';
 import * as userController from '../controllers/userController.js';
 import { authMiddleware } from '../middleware/auth.js';

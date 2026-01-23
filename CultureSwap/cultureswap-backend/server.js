@@ -1,6 +1,8 @@
 /**
- * Author: Gurshiv Singh Dabb
+ * server.js
  * Main server file for CultureSwap backend
+ * 
+ * Author: Gurshiv Singh Dabb
  */
 
 import express from 'express';

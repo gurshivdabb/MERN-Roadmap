@@ -1,6 +1,12 @@
+/**
+ * userController.js
+ * Handles CRUD operations for User entities. 
+ * 
+ * Author: Gurshiv Singh Dabb
+ */
+
 import User from '../models/User.js';
 import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
 import { generateAccessToken } from '../middleware/auth.js';
 
 // GET all users

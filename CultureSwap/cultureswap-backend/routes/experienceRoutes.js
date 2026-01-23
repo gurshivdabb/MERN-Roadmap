@@ -1,3 +1,10 @@
+/**
+ * experienceRoutes.js
+ * Routes for Experience entity
+ * 
+ * Author: Gurshiv Singh Dabb
+ */
+
 import express from 'express';
 import * as expController from '../controllers/experienceController.js';
 import { authMiddleware } from '../middleware/auth.js';

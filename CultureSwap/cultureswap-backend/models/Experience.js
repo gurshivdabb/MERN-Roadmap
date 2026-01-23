@@ -1,5 +1,13 @@
+/**
+ * Experience.js
+ * Mongoose model for Experience entity
+ * 
+ * Author: Gurshiv Singh Dabb
+ */
+
 import mongoose from 'mongoose';
 
+// Experience Schema
 const experienceSchema = new mongoose.Schema({
     userID: {
         type: mongoose.Schema.Types.ObjectId,

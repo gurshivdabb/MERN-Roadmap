@@ -1,3 +1,10 @@
+/**
+ * experienceController.js
+ * Handles CRUD operations for Experience entities.
+ * 
+ * Author: Gurshiv Singh Dabb
+ */
+
 import Experience from "../models/Experience.js";
 
 // GET all experiences
