@@ -6,7 +6,7 @@
  */
 
 import jwt from 'jsonwebtoken';
-import { JWT_EXPIRATION, HTTP_STATUS } from '../config/constants';
+import { JWT_EXPIRATION, HTTP_STATUS } from '../config/constants.js';
 
 // Middleware to protect routes
 // - reads Authorization header
