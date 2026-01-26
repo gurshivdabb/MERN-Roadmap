@@ -12,6 +12,9 @@ import dotenv from 'dotenv';
 import userRouter from './routes/userRoutes.js';
 import experienceRouter from './routes/experienceRoutes.js';
 
+// import PORTS from constants
+import { PORT } from './config/constants.js';
+
 dotenv.config();
 
 // connect to MongoDB
@@ -27,5 +30,4 @@ app.use('/experiences', experienceRouter);
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
-const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on PORT ${PORT}`));

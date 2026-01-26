@@ -6,6 +6,7 @@
  */
 
 import Experience from "../models/Experience.js";
+import { HTTP_STATUS } from "../config/constants.js";
 
 // GET all experiences
 export const getExperiences = async (req, res) => {
@@ -13,7 +14,7 @@ export const getExperiences = async (req, res) => {
         const exps = await Experience.find().populate('userID');
         res.json(exps);
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ message: err.message });
     }
 };
 
@@ -23,11 +24,11 @@ export const getExperience = async (req, res) => {
         const exp = await Experience.findById(req.params.id).populate('userID');
 
         if (!exp)
-            return res.status(404).json({ message: 'Not Found' });
+            return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'Not Found' });
 
         res.json(exp);
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ message: err.message });
     }
 };
 
@@ -35,12 +36,12 @@ export const getExperience = async (req, res) => {
 export const createExperience = async (req, res) => {
     try {
         const exp = await Experience.create({ ...req.body, userID: req.user._id });
-        res.status(201).json({
+        res.status(HTTP_STATUS.CREATED).json({
             message: 'Experience created',
             experience: exp
         });
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: err.message });
     }
 };
 
@@ -50,11 +51,11 @@ export const updateExperience = async (req, res) => {
         // Check existence
         const exp = await Experience.findById(req.params.id);
         if (!exp)
-            return res.status(404).json ({ message: 'Experience Not Found' });
+            return res.status(HTTP_STATUS.NOT_FOUND).json ({ message: 'Experience Not Found' });
 
         // Check ownership
         if (exp.userID.toString() !== req.user._id)
-            return res.status(403).json({ message: 'Forbidden: Not your experience' });
+            return res.status(HTTP_STATUS.FORBIDDEN).json({ message: 'Forbidden: Not your experience' });
 
         const updatedExp = await Experience.findByIdAndUpdate(
             req.params.id,
@@ -63,11 +64,10 @@ export const updateExperience = async (req, res) => {
         );
 
         if (!updatedExp)
-            return res.status(404).json({ message: 'Not Found' });
-
+            return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'Not Found' });
         res.json(updatedExp);
     } catch (err) {
-        res.status(400).json({ message: err.message });
+        res.status(HTTP_STATUS.BAD_REQUEST).json({ message: err.message });
     }
 };
 
@@ -77,20 +77,19 @@ export const deleteExperience = async (req, res) => {
         // Check existence
         const exp = await Experience.findById(req.params.id);
         if (!exp)
-            return res.status(404).json ({ message: 'Experience Not Found' });
+            return res.status(HTTP_STATUS.NOT_FOUND).json ({ message: 'Experience Not Found' });
 
         // Check ownership
         if (exp.userID.toString() !== req.user._id)
-            return res.status(403).json({ message: 'Forbidden: Not your experience' });
+            return res.status(HTTP_STATUS.FORBIDDEN).json({ message: 'Forbidden: Not your experience' });
         
         const deletedExp = await Experience.findByIdAndDelete(req.params.id);
 
         if (!deletedExp)
-            return res.status(404).json({ message: 'Not Found' });
-
+            return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'Not Found' });
         res.json({ message: 'Experience Deleted Successfully' });
     } catch (err) {
-        res.status(500).json({ message: err.message });
+        res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ message: err.message });
     }
 };
 
