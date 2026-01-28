@@ -16,7 +16,9 @@ export function authMiddleware(req, res, next) {
     // Format: "Bearer <token>"
     const authHeader = req.headers.authorization; // Bearer <token>
     // if no header, return 401
-    if (!authHeader) return res.status(HTTP_STATUS.UNAUTHORIZED).json({ message: 'Missing Token' });
+    if (!authHeader) { 
+        return res.status(HTTP_STATUS.UNAUTHORIZED).json({ message: 'Missing Token' }); 
+    }
 
     // Split header into type and token
     const [type, token] = authHeader.split(' ');

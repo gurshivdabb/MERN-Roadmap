@@ -15,6 +15,11 @@ import { BCRYPT_SALT_ROUNDS, HTTP_STATUS } from '../config/constants.js';
 export const getUsers = async (req, res) => {
     try {
         const users = await User.find().select('-password'); // exclude passwords
+        
+        if (users.length === 0) {
+            return res.status(HTTP_STATUS.NO_CONTENT).json({ message: 'No users found' });
+        }
+
         res.json(users);
     } catch (err) {
         res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ message: err.message });
@@ -26,8 +31,9 @@ export const getUser = async (req, res) => {
     try {
         const user = await User.findById(req.params.id).select('-password'); // exclude password
 
-        if (!user)
+        if (!user) {
             return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'Not Found' });
+        }
 
         res.json(user);
     } catch (err) {
@@ -142,8 +148,9 @@ export const deleteUser = async (req, res) => {
     try {
         const deletedUser = await User.findByIdAndDelete(req.params.id);
 
-        if (!deletedUser)
+        if (!deletedUser) {
             return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'Not Found' });
+        }
 
         res.json({ message: 'User Deleted Successfully' });
     } catch (err) {
