@@ -1,10 +1,10 @@
-# 🎨 CultureSwap – MERN Micro Cultural Exchange
+# CultureSwap – MERN Micro Cultural Exchange
 
 # Weekly & Daily Checklist
 
 ---
 
-## November 2025 – Backend Foundations
+## Phase 1 – Backend Foundations
 
 ### Week 1 – Node.js & Express Basics
 - [x] Mon – Install Node.js & npm, create project folder
@@ -44,7 +44,7 @@
 
 ---
 
-## December 2025 – Frontend Foundations
+## Phase 2 – Frontend Foundations
 
 ### Week 5 – React Basics
 - [ ] Mon – Learn React: components, JSX, state, props
@@ -84,7 +84,7 @@
 
 ---
 
-## January 2026 – Social Features & Gamification
+## Phase 3 – Social Features & Gamification
 
 ### Week 9 – Likes
 - [ ] Mon – Learn React state & event handling
@@ -124,7 +124,7 @@
 
 ---
 
-## February – March 2026 – Deployment & Advanced Features
+## Phase 4 – March 2026 – Deployment & Advanced Features
 
 ### Week 13 – Backend Deployment
 - [ ] Mon – Learn deployment basics (Heroku / Render)
@@ -164,7 +164,7 @@
 
 ---
 
-## April 2026 – Portfolio & Internship Prep
+## Phase 5 – Portfolio & Internship Prep
 
 ### Week 17 – Portfolio Integration
 - [ ] Mon – Add CultureSwap to portfolio site
