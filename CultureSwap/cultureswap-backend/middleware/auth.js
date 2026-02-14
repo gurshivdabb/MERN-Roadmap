@@ -28,7 +28,7 @@ export function authMiddleware(req, res, next) {
     // validate token
     try{
         const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
-        req.user = decoded; // attach user info to request
+        req.user = {_id: decoded.id, email: decoded.email}; // attach user info to request
         next(); // token valid, proceed to next middleware/route handler
     } catch(err) {
         return res.status(HTTP_STATUS.UNAUTHORIZED).json( {message: 'Invalid or expired token'} );

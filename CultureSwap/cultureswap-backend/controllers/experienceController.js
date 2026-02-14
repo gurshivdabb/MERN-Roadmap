@@ -60,7 +60,7 @@ export const updateExperience = async (req, res) => {
             return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'Experience Not Found' });
 
         // Check ownership
-        if (exp.userID.toString() !== req.user._id) {
+        if (exp.userID.toString() !== req.user._id.toString()) {
             return res.status(HTTP_STATUS.FORBIDDEN).json({ message: 'Forbidden: Not your experience' });
         }
 
@@ -89,7 +89,7 @@ export const deleteExperience = async (req, res) => {
             return res.status(HTTP_STATUS.NOT_FOUND).json({ message: 'Experience Not Found' });
 
         // Check ownership
-        if (exp.userID.toString() !== req.user._id) {
+        if (exp.userID.toString() !== req.user._id.toString()) {
             return res.status(HTTP_STATUS.FORBIDDEN).json({ message: 'Forbidden: Not your experience' });
         }
 
