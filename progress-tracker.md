@@ -1,5 +1,4 @@
 # CultureSwap – MERN Micro Cultural Exchange
-
 # Weekly & Daily Checklist
 
 ---
@@ -10,7 +9,7 @@
 - [x] Mon – Install Node.js & npm, create project folder
 - [x] Tue – Learn Node.js modules & async/await
 - [x] Wed – Install Express & setup server.js
-- [x] Thu – Create first route (`GET /`) “Hello World”
+- [x] Thu – Create first route (`GET /`) "Hello World"
 - [x] Fri – Test route with Postman
 - [x] Sat – Add .gitignore, initialize Git repo
 - [x] Sun – Commit all changes to GitHub
@@ -33,45 +32,45 @@
 - [x] Sat – Test authentication flow
 - [x] Sun – Commit all changes to GitHub
 
-### Part 4 – Testing & Cleanup
+### Part 4 – Validation, Error Handling & Cleanup
 - [x] Mon – Test all CRUD routes with Postman
 - [x] Tue – Fix any bugs or errors
 - [ ] Wed – Refactor code for readability
-- [x] Thu – Add environment variables
+- [x] Thu – Add environment variables (.env with dotenv)
 - [x] Fri – Review project folder structure
-- [x] Sat – Write basic README for backend
-- [ ] Sun – Commit all changes to GitHub
+- [ ] Sat – Add input validation (express-validator or Joi) + error handling middleware
+- [ ] Sun – Commit all changes to GitHub & write basic backend README
 
 ---
 
 ## Phase 2 – Frontend Foundations
 
 ### Part 1 – React Basics
-- [ ] Mon – Learn React: components, JSX, state, props
-- [ ] Tue – Learn React Router for multiple pages
-- [ ] Wed – Setup frontend project
-- [ ] Thu – Implement login/signup pages & routing
+- [ ] Mon – Learn React: components, JSX, props
+- [ ] Tue – Learn React state: useState & useEffect hooks (spend extra time here)
+- [ ] Wed – Setup frontend project (Vite + React), configure .env variables
+- [ ] Thu – Learn React Router — implement login/signup pages & routing
 - [ ] Fri – Test routing & page navigation
 - [ ] Sat – Commit frontend setup
 - [ ] Sun – Update README with progress
 
 ### Part 2 – Connecting Frontend & Backend
-- [ ] Mon – Learn Axios / fetch for API calls
-- [ ] Tue – Connect login/signup forms to backend
+- [ ] Mon – Learn Axios / fetch for API calls; configure CORS on backend
+- [ ] Tue – Connect login/signup forms to backend; store JWT in memory/state
 - [ ] Wed – Display list of experiences (GET request)
-- [ ] Thu – Test API integration
+- [ ] Thu – Test API integration end-to-end
 - [ ] Fri – Fix bugs & errors
 - [ ] Sat – Commit frontend API integration
 - [ ] Sun – Update README with screenshots
 
 ### Part 3 – Forms & CRUD Integration
 - [ ] Mon – Learn controlled forms in React
-- [ ] Tue – Implement “Add Experience” form (POST)
+- [ ] Tue – Implement "Add Experience" form (POST)
 - [ ] Wed – Implement Edit experience (PUT)
 - [ ] Thu – Implement Delete experience (DELETE)
-- [ ] Fri – Test CRUD integration
+- [ ] Fri – Test full CRUD integration
 - [ ] Sat – Commit all form & CRUD changes
-- [ ] Sun – Update README screenshots
+- [ ] Sun – Update README with screenshots
 
 ### Part 4 – Styling & Dashboard
 - [ ] Mon – Learn CSS / Tailwind basics
@@ -80,86 +79,86 @@
 - [ ] Thu – Test dashboard functionality
 - [ ] Fri – Polish UI styling
 - [ ] Sat – Commit UI & dashboard updates
-- [ ] Sun – Update README screenshots
+- [ ] Sun – Update README with screenshots
 
 ---
 
 ## Phase 3 – Social Features & Gamification
 
 ### Part 1 – Likes
-- [ ] Mon – Learn React state & event handling
-- [ ] Tue – Add “Like” button for experiences
+- [ ] Mon – Learn React state & event handling for interactive UI
+- [ ] Tue – Add "Like" button for experiences (backend route + frontend)
 - [ ] Wed – Display total likes per post
 - [ ] Thu – Test like functionality
 - [ ] Fri – Fix bugs & polish
 - [ ] Sat – Commit like feature
-- [ ] Sun – Update README screenshots
+- [ ] Sun – Update README with screenshots
 
 ### Part 2 – Comments
-- [ ] Mon – Learn nested state / Context API basics
-- [ ] Tue – Add comment feature
-- [ ] Wed – Display comments on dashboard
-- [ ] Thu – Test comment functionality
+- [ ] Mon – Learn React Context API basics; plan comment schema updates
+- [ ] Tue – Update Comment schema in backend; implement comment routes
+- [ ] Wed – Add comment form & display comments on frontend
+- [ ] Thu – Test comment functionality end-to-end
 - [ ] Fri – Fix bugs
 - [ ] Sat – Commit comments feature
-- [ ] Sun – Update README screenshots
+- [ ] Sun – Update README with screenshots
 
 ### Part 3 – Badges / Gamification
-- [ ] Mon – Learn gamification logic
-- [ ] Tue – Add badges for milestones
-- [ ] Wed – Display badges on dashboard
-- [ ] Thu – Test badges functionality
+- [ ] Mon – Learn gamification logic; design badge schema & milestone rules
+- [ ] Tue – Implement badge-awarding logic in backend
+- [ ] Wed – Display badges on frontend dashboard
+- [ ] Thu – Test badge triggering & display
 - [ ] Fri – Fix bugs & polish UI
-- [ ] Sat – Commit gamification
-- [ ] Sun – Update README screenshots
+- [ ] Sat – Commit gamification feature
+- [ ] Sun – Update README with screenshots
 
 ### Part 4 – Testing & UI Polish
-- [ ] Mon – Test all features & responsiveness
-- [ ] Tue – Fix minor bugs
-- [ ] Wed – UI polish & consistency
-- [ ] Thu – Final dashboard adjustments
-- [ ] Fri – Update README screenshots
+- [ ] Mon – Learn Jest & Supertest basics; write tests for key backend routes
+- [ ] Tue – Fix any bugs revealed by tests
+- [ ] Wed – UI polish & consistency pass
+- [ ] Thu – Test all features & responsiveness on mobile
+- [ ] Fri – Final dashboard adjustments
 - [ ] Sat – Commit all updates
 - [ ] Sun – Weekly summary commit
 
 ---
 
-## Phase 4 – March 2026 – Deployment & Advanced Features
+## Phase 4 – Deployment & Advanced Features
 
 ### Part 1 – Backend Deployment
-- [ ] Mon – Learn deployment basics (Heroku / Render)
-- [ ] Tue – Configure backend for deployment
-- [ ] Wed – Deploy backend
-- [ ] Thu – Test deployed backend
+- [ ] Mon – Learn deployment basics (Render recommended)
+- [ ] Tue – Configure backend env variables for production
+- [ ] Wed – Deploy backend to Render
+- [ ] Thu – Test all deployed backend routes with Postman
 - [ ] Fri – Fix deployment bugs
 - [ ] Sat – Commit deployment configs
 - [ ] Sun – Update README with backend URL
 
 ### Part 2 – Frontend Deployment
-- [ ] Mon – Learn frontend deployment (Netlify / Vercel)
-- [ ] Tue – Configure frontend for deployment
+- [ ] Mon – Learn frontend deployment (Netlify or Vercel)
+- [ ] Tue – Configure frontend env variables for production API URL
 - [ ] Wed – Deploy frontend
-- [ ] Thu – Connect frontend to deployed backend
-- [ ] Fri – Test deployed full app
+- [ ] Thu – Connect frontend to deployed backend; verify CORS in production
+- [ ] Fri – Test full deployed app end-to-end
 - [ ] Sat – Commit deployment configs
 - [ ] Sun – Update README with live link
 
 ### Part 3 – Optional Features
-- [ ] Mon – Learn Google Maps API / image upload
+- [ ] Mon – Learn Google Maps API basics / Cloudinary for image upload
 - [ ] Tue – Add location to experiences
 - [ ] Wed – Add image upload
 - [ ] Thu – Test optional features
 - [ ] Fri – Polish optional features
 - [ ] Sat – Commit optional features
-- [ ] Sun – Update README screenshots
+- [ ] Sun – Update README with screenshots
 
 ### Part 4 – Demo Preparation
-- [ ] Mon – Learn screen recording / presentation basics
+- [ ] Mon – Plan demo script & key features to highlight
 - [ ] Tue – Record demo video (~2 min)
-- [ ] Wed – Capture screenshots
-- [ ] Thu – Add screenshots to README
-- [ ] Fri – Polish README with project description
-- [ ] Sat – Commit demo content
+- [ ] Wed – Capture screenshots of all major features
+- [ ] Thu – Add screenshots & demo video link to README
+- [ ] Fri – Polish README: project description, tech stack, setup instructions, live link
+- [ ] Sat – Commit all demo content
 - [ ] Sun – Weekly summary commit
 
 ---
@@ -168,28 +167,18 @@
 
 ### Part 1 – Portfolio Integration
 - [ ] Mon – Add CultureSwap to portfolio site
-- [ ] Tue – Add project description & tech stack
-- [ ] Wed – Add screenshots & badges
-- [ ] Thu – Test portfolio links
-- [ ] Fri – Fix minor UI issues
+- [ ] Tue – Write project description, tech stack & key learnings
+- [ ] Wed – Add screenshots, badges & live link
+- [ ] Thu – Test all portfolio links
+- [ ] Fri – Fix minor UI issues on portfolio
 - [ ] Sat – Commit portfolio updates
 - [ ] Sun – Update README
 
-### Part 2 – Demo Video
-- [ ] Mon – Record final ~2 min demo
-- [ ] Tue – Edit video
-- [ ] Wed – Upload demo to portfolio / GitHub
-- [ ] Thu – Test video links
-- [ ] Fri – Commit video links & README
-- [ ] Sat – Share demo with mentor/friends
-- [ ] Sun – Weekly summary commit
-
-### Part 3 – Final Polish
-- [ ] Mon – Test all app features
-- [ ] Tue – Fix minor bugs
+### Part 2 – Final Polish & Celebration
+- [ ] Mon – Test all app features one final time
+- [ ] Tue – Fix any remaining minor bugs
 - [ ] Wed – Polish UI & responsiveness
-- [ ] Thu – Update README screenshots & live link
+- [ ] Thu – Update README screenshots & confirm live link works
 - [ ] Fri – Commit all final updates
-- [ ] Sat – Backup project & push to GitHub
-- [ ] Sun – Weekly summary commit and Celebrate progress
-
+- [ ] Sat – Backup project & push everything to GitHub
+- [ ] Sun – Weekly summary commit — celebrate finishing your first MERN app! 🎉
