@@ -35,7 +35,7 @@
 ### Part 4 – Validation, Error Handling & Cleanup
 - [x] Mon – Test all CRUD routes with Postman
 - [x] Tue – Fix any bugs or errors
-- [ ] Wed – Refactor code for readability
+- [x] Wed – Refactor code for readability
 - [x] Thu – Add environment variables (.env with dotenv)
 - [x] Fri – Review project folder structure
 - [ ] Sat – Add input validation (express-validator or Joi) + error handling middleware
@@ -182,3 +182,4 @@
 - [ ] Fri – Commit all final updates
 - [ ] Sat – Backup project & push everything to GitHub
 - [ ] Sun – Weekly summary commit — celebrate finishing your first MERN app! 🎉
+
