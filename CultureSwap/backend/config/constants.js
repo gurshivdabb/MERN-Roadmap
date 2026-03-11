@@ -4,7 +4,6 @@
  * Author: Gurshiv Singh Dabb
  */
 
-export const PORT = process.env.PORT || 3000;
 export const BCRYPT_SALT_ROUNDS = 10;
 export const JWT_EXPIRATION = '1h';
 export const HTTP_STATUS = {

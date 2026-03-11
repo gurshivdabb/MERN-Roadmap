@@ -12,10 +12,9 @@ import dotenv from 'dotenv';
 import userRouter from './routes/userRoutes.js';
 import experienceRouter from './routes/experienceRoutes.js';
 
-// import PORTS from constants
-import { PORT } from './config/constants.js';
-
 dotenv.config();
+
+const PORT = process.env.PORT || 3000;
 
 // connect to MongoDB
 connectDB();

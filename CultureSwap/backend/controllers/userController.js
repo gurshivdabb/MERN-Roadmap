@@ -88,20 +88,24 @@ export const loginUser = async (req, res) => {
         const { email, password } = req.body;
 
         // Validation
-        if (!email || !password) {
-            return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Email and password are required' });
+        if (!email) {
+            return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Email is required' });
+        }
+
+        if (!password) {
+            return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Password is required' });
         }
 
         // Find user by email
         const user = await User.findOne({ email }).select('+password'); // include password for comparison
         if (!user) {
-            return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Invalid email' });
+            return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Invalid credentials' });
         }
 
         // Compare password
         const isPassValid = await bcrypt.compare(password, user.password);
         if (!isPassValid) {
-            return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Invalid password' });
+            return res.status(HTTP_STATUS.BAD_REQUEST).json({ message: 'Invalid credentials' });
         }
 
         // Generate JWT
@@ -127,6 +131,10 @@ export const updateUser = async (req, res) => {
     try {
         const { password, ...safebody } = req.body; // ignore password updates [ for now ]
 
+        if (req.params.id.toString() !== req.user._id.toString()) {
+            return res.status(HTTP_STATUS.FORBIDDEN).json({ message: 'Access Denied' });
+        }
+
         const updatedUser = await User.findByIdAndUpdate(
             req.params.id,
             safebody,
@@ -146,6 +154,10 @@ export const updateUser = async (req, res) => {
 // DELETE user
 export const deleteUser = async (req, res) => {
     try {
+        if (req.params.id.toString() !== req.user._id.toString()) {
+            return res.status(HTTP_STATUS.FORBIDDEN).json({ message: 'Access Denied' });
+        }
+
         const deletedUser = await User.findByIdAndDelete(req.params.id);
 
         if (!deletedUser) {
