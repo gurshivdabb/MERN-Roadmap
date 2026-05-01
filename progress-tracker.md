@@ -46,8 +46,8 @@
 ## Phase 2 – Frontend Foundations
 
 ### Part 1 – React Basics
-- [ ] Task 1 – Learn React: components, JSX, props
-- [ ] Task 2 – Learn React state: useState & useEffect hooks (spend extra time here)
+- [x] Task 1 – Learn React: components, JSX, props
+- [x] Task 2 – Learn React state: useState & useEffect hooks (spend extra time here)
 - [ ] Task 3 – Setup frontend project (Vite + React), configure .env variables
 - [ ] Task 4 – Learn React Router — implement login/signup pages & routing
 - [ ] Task 5 – Test routing & page navigation
